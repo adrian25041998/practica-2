@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:param name="titulo" value="Area Cuadrado"/>
+
+
+    <h:head>
+        <meta charset="UTF-8"/>
+        <title>
+            #{titulo}
+        </title>
+
+        <meta name="viweport" content="width=device-width"/>
+    </h:head>
+    <h:body>
+        <h1>#{titulo}</h1>
+
+        <h:form prependId="false">
+            <p>
+                <h:inputText id="lado" p:placeholder="Lado..." required="true" requiredMessage="Falta el valor" value="#{referencia.lado}"/>
+                <h:message for="lado"/>
+            </p>
+            <p>
+                <h:commandButton value="CalcularArea" action="#{referencia.calcula()}"/>
+            </p>
+        </h:form>
+        <p>
+            <h:messages globalOnly="true"/>
+        </p>
+        <footer>Copyright 2019 Jose Adrian Baltazar González</footer>
+    </h:body>
+</html>
+
